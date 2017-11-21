@@ -6,30 +6,61 @@
     	body {
     		background-color: white;
     		text-align: center;
+			color: rgb(15, 15, 15);
     	}
 
  		h1 {
- 			color: #505050;
+ 			color: rgb(55, 55, 55);
  		}
 
  		.cadre {
+ 			/*
+				for debug only
+ 			*/
  			border: 1px solid black;
  		}
 
+ 		.centered {
+ 			/*
+				/!\ use flexbox for vertical centering
+ 			*/
+ 			align-items: center;
+		 	display: flex;
+		 	justify-content: center;
+		}
+
+		.fullpage {
+			/*
+			not really fullpage, because it's not centered otherwise...
+			overflow hidden hides the scroll
+			*/
+			height: 99vh;
+			width:  99vw;
+			overflow: hidden;
+		}
+
+		.spacer {
+			margin-top: 60px;
+		}
+
     </style>
 </head>
-<body>
+<body class="centered fullpage">
 
+<div>
 <h1>Le jeu le plus nul du monde !</h1>
 
 <p >Ici se trouve le jeu le moins intéressant jamais crée, en ce monde.</p>
 
-<div>
+<p>Règle du jeu : devinez le nombre choisi par l'ordinateur.</p>
+
+<div class="spacer">
 	<input type="text" id="nombre_entre">
 	<button onclick="game()" type="button">Jouer !</button>
 </div>
 
-<p id='affichage'></p>
+<p id='affichage' style="visibility:hidden;">placeholder</p>
+</div>
 
 <script>
 	nombre_a_trouver = Math.floor(Math.random() * 100) + 1;
@@ -39,6 +70,7 @@
 	}
 
 	function update_display(text){
+		document.getElementById('affichage').style.visibility = "visible";
 		document.getElementById('affichage').textContent = text;
 	}
 
