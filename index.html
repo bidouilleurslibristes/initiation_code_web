@@ -14,16 +14,26 @@
  		}
 
  		.cadre {
+ 			/*
+				for debug only
+ 			*/
  			border: 1px solid black;
  		}
 
  		.centered {
+ 			/*
+				/!\ use flexbox for vertical centering
+ 			*/
  			align-items: center;
 		 	display: flex;
 		 	justify-content: center;
 		}
 
 		.fullpage {
+			/*
+			not really fullpage, because it's not centered otherwise...
+			overflow hidden hides the scroll
+			*/
 			height: 99vh;
 			width:  99vw;
 			overflow: hidden;
