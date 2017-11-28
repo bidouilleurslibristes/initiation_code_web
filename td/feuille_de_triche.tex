@@ -1,12 +1,17 @@
-\documentclass[10pt, french]{article}
+\documentclass[10pt, landscape, french]{article}
 
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 
-\usepackage{geometry}
+\usepackage[margin=0.8cm]{geometry}
 \usepackage[document]{ragged2e}
 \usepackage{minted}
+\usepackage{multicol}
+\setlength{\columnsep}{1cm}
+\setlength{\columnseprule}{1pt}
+\def\columnseprulecolor{\color{black}}
 \usepackage[hyphens]{url}
+\usepackage{graphicx}
 
 \newcommand{\codeJSinline}[2] {
 	#1 : \mintinline{javascript}{#2} \linebreak
@@ -47,6 +52,8 @@
 	\begin{center}
 		\large{Feuille de triche HTML / CSS / Javascript}
 	\end{center}
+
+\begin{multicols}{3}
 
 		\section{Javascript}
 
@@ -165,7 +172,7 @@ Liste complète des balises HTML :
 \end{itemize}
 
 \subsection{Structure de base}
-\begin{codeHTML}{page HTML minimale}
+\begin{codeHTML}{Page minimale}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -188,7 +195,9 @@ Liste complète des balises HTML :
 
 \subsection{Interaction}
 \begin{codeHTML}{bouton}
-<button onclick="fonction_a_apeller()" type="button">
+<button 
+  onclick="fonction_a_apeller()" 
+  type="button">
 	Text
 </button>
 \end{codeHTML}
@@ -196,6 +205,38 @@ Liste complète des balises HTML :
 
 
 		\section{CSS}
+\subsection{Syntaxe}    
+
+\begin{center}
+ \includegraphics[width=0.9\linewidth]{css_syntax-declaration.png}
+\end{center}    
+
+\begin{center}
+ \includegraphics[width=0.9\linewidth]{css_syntax-declarations-block.png}
+\end{center}    
+
+\begin{center}
+ \includegraphics[width=0.9\linewidth]{css_syntax-ruleset.png}
+\end{center}    
+
+\begin{codeCSS}{Exemple de syntaxe}
+body {
+    background-color: white;
+    text-align: center;
+    color: rgb(15, 15, 15);
+}
+
+h1 {
+    color: rgb(55, 55, 55);
+}
+\end{codeCSS}
+
+\subsection{Sélecteurs}
+ 
+\subsection{Liste de propritétés CSS3} 
+\begin{itemize}
+	\item \url{https://developer.mozilla.org/en-US/docs/Web/CSS/Reference}
+\end{itemize}    
     
-    
+\end{multicols}
 \end{document}
