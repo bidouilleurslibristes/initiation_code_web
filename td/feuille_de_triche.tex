@@ -53,7 +53,7 @@
 		\large{Feuille de triche HTML / CSS / Javascript}
 	\end{center}
 
-\begin{multicols}{3}
+\begin{multicols*}{3}
 
 		\section{Javascript}
 
@@ -68,16 +68,21 @@ var    X     = 1;
 		\subsection{Variables et types de base}
  		\codeJSinline{Déclaration de la variable "X"}{var X = 1;}
  		\begin{codeJS}{Les variables ont un type}
-typeof(2) // number (entier ou nombre à virgule)
-typeof("2") // string (chaîne de caractères) 		
+// entier ou nombre à virgule
+typeof(2) // number 
+
+// chaîne de caractères
+typeof("2") // string 
  		\end{codeJS}
  		\begin{codeJS}{Les types sont importants et changent les calculs}
 var foo = 1;
 var bar = '2';
-console.log(foo + bar);  // résultat : 12 (oups)
+console.log(foo + bar);  // résultat : 12 :'(
+
 // voilà comment faire correctement
 var foo = 1;
-var bar = Number('2'); // on change '2' en entier
+// on change '2' en entier
+var bar = Number('2'); 
 console.log(foo + bar);  // résultat : 3 (/o/)
 
 		\end{codeJS}
@@ -88,19 +93,23 @@ console.log(foo + bar);  // résultat : 3 (/o/)
 2 > 3 ; // false
 3.0*2 >= 6; // true
 		\end{codeJS}
-		\begin{codeJS}{Une comparaison est une variable de type booléen}
-(1 + 1 != 2) == false; // true (oulala)
-		\end{codeJS}
+
 
 		\begin{codeJS}{Une condition permet d'exécuter du code selon la valeur d'une comparaison}
-if(1 + 1 == 3){
-	// ne s'exécute jamais
+var age = 15
+if(age >= 18){
+  // s'exécute
+  // écrire "majeur !"
 }
-else if (1 + 1 != 2){
-	// ne s'exécute pas non plus
+else if (age < 18 && age > 0){
+  // ne s'exécute pas
+  // écrire "mineur"
 }
 else {
-	// s'exécute si les autres comparaisons sont fausses
+  // s'exécute si les autres 
+  // comparaisons sont fausses
+	
+  // écrire "nombre positif svp !"
 }
 		\end{codeJS}
 
@@ -108,17 +117,20 @@ else {
 		Les boucles servent à effectuer une action plusieurs fois. Elles sont gouvernées par un booléen.
 
 		\begin{codeJS}{Utiliser les boucles for quand on sait  l'avance le nombre d'itérations.}
-var res = 0 // on veut calculer la somme de 1 à 11
+// on veut calculer la somme de 1 à 11
+var res = 0; 
 for(var i=1; i < 11; i = i + 1){
 	res = res + i;
 } // res vaut 1 + 2 + ... + 10 = 55
 		\end{codeJS}
 
 \begin{codeJS}{Des fois, on ne sait pas combien d'itérations sont nécessaires pour arriver au résultat. On utilise les boucles while}
-var valeur = 500; res = 0;// on cherche res * 7 = 500;
+// on cherche ? * 7 = 500;
+// sans utiliser la division
+var valeur = 500; res = 0;
 while(res * 7 < valeur){
 	res += 1; 
-} // res = 72// évidemment, on peut utiliser la division...
+} // res = 72
 
 		\end{codeJS}
 
@@ -131,10 +143,15 @@ Attention, les boucles peuvent ne jamais rencontrer le critères d'arrêt, on pa
 Pour appeler une fonction, il suffit d'écrire son nom et de mettre des paramètres entre par 		
 
 		\begin{codeJS}{Utilisation de fonction}
-console.log("quelque chose"); // écrit
+// écrire dans la console 
+console.log("quelque chose"); 
+
 Math.random(); // tire un nombre au hasard
+
 Math.floor(2.3); // renvoie la valeur tronquée (2 ici)
+
 alert("quelque chose"); // ouvre une popup
+
 prompt("Nom :"); // ouvre une popup qui demande un nom
 		\end{codeJS}		
 		
@@ -145,7 +162,19 @@ function le_nom_que_lon_veut(param1, param2) {
 }
 		\end{codeJS}
 		
-		\section{HTML}
+\section{HTML}
+
+\subsection{Vocabulaire}
+
+
+\begin{center}
+ Elément / balise : 
+ \includegraphics[width=0.8\linewidth]{chat-grincheuxl.png}
+ 
+ Attribut : 
+ \includegraphics[width=0.8\linewidth]{attribut-chat-grincheux.png} 
+\end{center}    
+
 
 \subsection{Balises}
 
@@ -178,25 +207,28 @@ Liste complète des balises HTML :
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
-	<script>console.log("Du JS ici");</script>
 	<style>Du css ici</style>
 </head>
 <body>
 	<!-- contenu ici -->
+
+	<script>
+	  console.log("Du JS ici");
+	</script>
 </body>
 </html>
 \end{codeHTML}
 
 
 \subsection{Séparations de sections}
-\codeHTMLinline{Titres}{<h1></h1> , <h2></h2>}
-\codeHTMLinline{Bloc de contenu}{<div></div>}
+\codeHTMLinline{Titres}{<h1></h1> , <h2></h2>} \linebreak
+\codeHTMLinline{Bloc de contenu}{<div></div>} \linebreak
 \codeHTMLinline{Paragraphe}{<p></p>}
 
 \subsection{Interaction}
 \begin{codeHTML}{bouton}
 <button 
-  onclick="fonction_a_apeller()" 
+  onclick="fonction_JS_a_apeller()" 
   type="button">
 	Text
 </button>
@@ -208,15 +240,18 @@ Liste complète des balises HTML :
 \subsection{Syntaxe}    
 
 \begin{center}
- \includegraphics[width=0.9\linewidth]{css_syntax-declaration.png}
+ Propriété : 
+ \includegraphics[width=0.8\linewidth]{css_syntax-declaration.png}
 \end{center}    
 
 \begin{center}
- \includegraphics[width=0.9\linewidth]{css_syntax-declarations-block.png}
+ Bloc de propriétés (plusieurs propriétés) :
+ \includegraphics[width=0.8\linewidth]{css_syntax-declarations-block.png}
 \end{center}    
 
 \begin{center}
- \includegraphics[width=0.9\linewidth]{css_syntax-ruleset.png}
+ Règle CSS (sélecteur d'élément + bloc) : 
+ \includegraphics[width=0.8\linewidth]{css_syntax-ruleset.png}
 \end{center}    
 
 \begin{codeCSS}{Exemple de syntaxe}
@@ -232,11 +267,63 @@ h1 {
 \end{codeCSS}
 
 \subsection{Sélecteurs}
+
+La grande puissance de CSS vient de sa façon de pouvoir sélectionner les éléments. 
+Voilà les techniques les plus classiques.
+\vspace{0.2cm}
+
+\begin{codeCSS}{Tous les élément d'un type}
+/* tous les textes des divs sont rouge */
+div {color: red;}
+\end{codeCSS}
+
+\begin{codeCSS}{Tous les élément d'un type}
+/* les textes des "divs" et 
+des "p" sont rouge */
+div, p { color: red; }
+\end{codeCSS}
+ 
+\begin{codeCSS}{Tous les élément d'une classe}
+/* les membres de "beau" */
+.beau { font-family: cursive; }
+\end{codeCSS}
+
+\begin{codeCSS}{Selon un identifiant}
+/* l'élément : "magnifique" */
+#magnifique { 
+  text-transform: uppercase;
+}
+\end{codeCSS}
+
+\subsection{Propriétés et valeurs utiles}
+
+\begin{codeCSS}{Pour le TP}
+/* change la couleur de fond de la page */
+ background-color: white;
+  
+/* centre les textes */
+ text-align: center;
+  
+/* change la couleur d'un texte */
+ color: rgb(15, 15, 15);
+  
+/* affiche le bord de l'élément */
+ border: 1px solid black;
+  
+/* permet d'espacer les éléments */
+ margin-top: 60px;
+
+
+\end{codeCSS}
+
  
 \subsection{Liste de propritétés CSS3} 
 \begin{itemize}
 	\item \url{https://developer.mozilla.org/en-US/docs/Web/CSS/Reference}
 \end{itemize}    
+
+\small {Les images sont issues de \url{https://developer.mozilla.org/fr/Apprendre/}}
     
-\end{multicols}
+\end{multicols*}
+
 \end{document}
