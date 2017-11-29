@@ -8,6 +8,7 @@
 \usepackage[hyphens]{url}
 \usepackage{graphicx}
 \usepackage{float}
+\usepackage[french]{babel}
 
 \newcommand{\codeJSinline}[2] {
 	#1 : \mintinline{javascript}{#2} \linebreak
@@ -70,7 +71,7 @@ Notions à utiliser : les types de variables, les boucles, les conditions et tes
 
 \subsection{Mettre du code dans une fonction}
 
-Pour pouvoir faciliter la suite, vous aller \texttt{encapsuler} la logique du jeu dans une fonction. Elle agira comme une boite noire qui fait ce qu'il faut. 
+Pour pouvoir faciliter la suite, vous allez \texttt{encapsuler} la logique du jeu dans une fonction. Elle agira comme une boite noire qui fait ce qu'il faut. 
 
 Pour un nombre donné en paramètre, la fonction va écrire si c'est plus, moins ou si c'est bon. 
 
@@ -118,9 +119,9 @@ Réalisez une page ayant cette structure
 
 \subsection{Adapter le jeu à la programmation réactive}
 
-Avant, nous avions une "boucle principale" pour continuer le jeu jusqu'à avoir trouver. A présent le navigateur nous en fourni une. Il faut légèrement changer le code de la fonction \texttt{tour} précédente. 
+Avant, nous avions une "boucle principale" pour continuer le jeu jusqu'à avoir trouver la bonne réponse. A présent le navigateur nous en fournit une. Il faut légèrement changer le code de la fonction \texttt{tour} précédente. 
 
-On peut faire en sorte que la validation du bouton lance un tour du jeu. Pour cela, nous allons faire une fonction \texttt{game} qui ne prend pas de paramètres. Nous allons dire au bouton de lancer la fonction lorsque l'on clique \codeJSinline{dessus}{<button onclick="game()" type="button">}
+On peut faire en sorte que la validation du bouton lance un tour du jeu. Pour cela, nous allons faire une fonction \texttt{game} qui ne prend pas de paramètres. Nous allons dire au bouton de lancer la fonction lorsque l'on clique \codeJSinline{dessus} {<button onclick="game()" type="button">}
 
 \begin{codeJS}{Structure de \texttt{game}}
 	function game() {
