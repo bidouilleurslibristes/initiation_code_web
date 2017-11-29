@@ -20,7 +20,7 @@
 \newcommand{\codeHTMLinline}[2] {
 	#1 : \mintinline{HTML}{#2}
   }
-
+  
 \newcommand{\codeCSSinline}[2] {
 	#1 : \mintinline{CSS}{#2} \linebreak
   }
@@ -48,7 +48,7 @@
 
 
 \begin{document}
-
+	
 	\begin{center}
 		\large{Feuille de triche HTML / CSS / Javascript}
 	\end{center}
@@ -60,19 +60,19 @@
 		\subsection{Syntaxe}
 		% syntax stuff
 		\begin{codeJS}{Les espaces ne sont pas pris en compte. Les tabulations permettent d'améliorer la lisibilité, mais ne sont pas importantes. Ces deux lignes sont équivalentes.}
-var X =   1;
+var X =   1; 
 var    X     = 1;
 		\end{codeJS}
-		\codeJSinline{Commentaires avec "//"}{// ce que je veux ici}
-
+		\codeJSinline{Commentaires avec "//"}{// ce que je veux ici} 
+		
 		\subsection{Variables et types de base}
  		\codeJSinline{Déclaration de la variable "X"}{var X = 1;}
  		\begin{codeJS}{Les variables ont un type}
 // entier ou nombre à virgule
-typeof(2) // number
+typeof(2) // number 
 
 // chaîne de caractères
-typeof("2") // string
+typeof("2") // string 
  		\end{codeJS}
  		\begin{codeJS}{Les types sont importants et changent les calculs}
 var foo = 1;
@@ -82,7 +82,7 @@ console.log(foo + bar);  // résultat : 12 :'(
 // voilà comment faire correctement
 var foo = 1;
 // on change '2' en entier
-var bar = Number('2');
+var bar = Number('2'); 
 console.log(foo + bar);  // résultat : 3 (/o/)
 
 		\end{codeJS}
@@ -106,9 +106,9 @@ else if (age < 18 && age > 0){
   // écrire "mineur"
 }
 else {
-  // s'exécute si les autres
+  // s'exécute si les autres 
   // comparaisons sont fausses
-
+	
   // écrire "nombre positif svp !"
 }
 		\end{codeJS}
@@ -118,7 +118,7 @@ else {
 
 		\begin{codeJS}{Utiliser les boucles for quand on sait  l'avance le nombre d'itérations.}
 // on veut calculer la somme de 1 à 11
-var res = 0;
+var res = 0; 
 for(var i=1; i < 11; i = i + 1){
 	res = res + i;
 } // res vaut 1 + 2 + ... + 10 = 55
@@ -129,7 +129,7 @@ for(var i=1; i < 11; i = i + 1){
 // sans utiliser la division
 var valeur = 500; res = 0;
 while(res * 7 < valeur){
-	res += 1;
+	res += 1; 
 } // res = 72
 
 		\end{codeJS}
@@ -138,13 +138,13 @@ Attention, les boucles peuvent ne jamais rencontrer le critères d'arrêt, on pa
 
 
 		% fonctions (déclaration / utilisation)
-		\subsection{Fonctions}
-		Les fonctions servent à isoler des morceaux de code, il y a quelque chose en entrée, on fait quelque chose avec.
-Pour appeler une fonction, il suffit d'écrire son nom et de mettre des paramètres entre par
+		\subsection{Fonctions}		
+		Les fonctions servent à isoler des morceaux de code, il y a quelque chose en entrée, on fait quelque chose avec. 
+Pour appeler une fonction, il suffit d'écrire son nom et de mettre des paramètres entre par 		
 
 		\begin{codeJS}{Utilisation de fonction}
-// écrire dans la console
-console.log("quelque chose");
+// écrire dans la console 
+console.log("quelque chose"); 
 
 Math.random(); // tire un nombre au hasard
 
@@ -153,32 +153,32 @@ Math.floor(2.3); // renvoie la valeur tronquée (2 ici)
 alert("quelque chose"); // ouvre une popup
 
 prompt("Nom :"); // ouvre une popup qui demande un nom
-		\end{codeJS}
-
+		\end{codeJS}		
+		
 		\begin{codeJS}{Déclaration de fonction}
 function le_nom_que_lon_veut(param1, param2) {
     // ce que l'on veut
     return param1 + param2 // par exemple
 }
 		\end{codeJS}
-
+		
 \section{HTML}
 
 \subsection{Vocabulaire}
 
 
 \begin{center}
- Elément / balise :
+ Elément / balise : 
  \includegraphics[width=0.8\linewidth]{chat-grincheuxl.png}
-
- Attribut :
- \includegraphics[width=0.8\linewidth]{attribut-chat-grincheux.png}
-\end{center}
+ 
+ Attribut : 
+ \includegraphics[width=0.8\linewidth]{attribut-chat-grincheux.png} 
+\end{center}    
 
 
 \subsection{Balises}
 
-Les balises permettent de structurer le document HTML, chacune à une particularité décrite dans le standard HTML5.
+Les balises permettent de structurer le document HTML, chacune à une particularité décrite dans le standard HTML5. 
 
 Détail d'une balise :
 \begin{itemize}
@@ -189,7 +189,7 @@ Détail d'une balise :
 \item \codeHTMLinline{ajout d'un identifiant}{<input id="mon_id" />}
 \end{itemize}
 
-Dans notre cas, nous n'utiliserons quasiment que des balises normales. Les classes et identifiants permettent de les manipuler plus facilement.
+Dans notre cas, nous n'utiliserons quasiment que des balises normales. Les classes et identifiants permettent de les manipuler plus facilement. 
 
 \codeHTMLinline{Exemple}{<article>} ou \codeHTMLinline{encore}{<img src="monImage.png" alt="">}
 
@@ -227,8 +227,8 @@ Liste complète des balises HTML :
 
 \subsection{Interaction}
 \begin{codeHTML}{bouton}
-<button
-  onclick="fonction_JS_a_apeller()"
+<button 
+  onclick="fonction_JS_a_apeller()" 
   type="button">
 	Text
 </button>
@@ -237,22 +237,22 @@ Liste complète des balises HTML :
 
 
 		\section{CSS}
-\subsection{Syntaxe}
+\subsection{Syntaxe}    
 
 \begin{center}
- Propriété :
+ Propriété : 
  \includegraphics[width=0.8\linewidth]{css_syntax-declaration.png}
-\end{center}
+\end{center}    
 
 \begin{center}
  Bloc de propriétés (plusieurs propriétés) :
  \includegraphics[width=0.8\linewidth]{css_syntax-declarations-block.png}
-\end{center}
+\end{center}    
 
 \begin{center}
- Règle CSS (sélecteur d'élément + bloc) :
+ Règle CSS (sélecteur d'élément + bloc) : 
  \includegraphics[width=0.8\linewidth]{css_syntax-ruleset.png}
-\end{center}
+\end{center}    
 
 \begin{codeCSS}{Exemple de syntaxe}
 body {
@@ -268,7 +268,7 @@ h1 {
 
 \subsection{Sélecteurs}
 
-La grande puissance de CSS vient de sa façon de pouvoir sélectionner les éléments.
+La grande puissance de CSS vient de sa façon de pouvoir sélectionner les éléments. 
 Voilà les techniques les plus classiques.
 \vspace{0.2cm}
 
@@ -278,11 +278,11 @@ div {color: red;}
 \end{codeCSS}
 
 \begin{codeCSS}{Tous les élément d'un type}
-/* les textes des "divs" et
+/* les textes des "divs" et 
 des "p" sont rouge */
 div, p { color: red; }
 \end{codeCSS}
-
+ 
 \begin{codeCSS}{Tous les élément d'une classe}
 /* les membres de "beau" */
 .beau { font-family: cursive; }
@@ -290,7 +290,7 @@ div, p { color: red; }
 
 \begin{codeCSS}{Selon un identifiant}
 /* l'élément : "magnifique" */
-#magnifique {
+#magnifique { 
   text-transform: uppercase;
 }
 \end{codeCSS}
@@ -300,30 +300,30 @@ div, p { color: red; }
 \begin{codeCSS}{Pour le TP}
 /* change la couleur de fond de la page */
  background-color: white;
-
+  
 /* centre les textes */
  text-align: center;
-
+  
 /* change la couleur d'un texte */
  color: rgb(15, 15, 15);
-
+  
 /* affiche le bord de l'élément */
  border: 1px solid black;
-
+  
 /* permet d'espacer les éléments */
  margin-top: 60px;
 
 
 \end{codeCSS}
 
-
-\subsection{Liste de propritétés CSS3}
+ 
+\subsection{Liste de propritétés CSS3} 
 \begin{itemize}
 	\item \url{https://developer.mozilla.org/en-US/docs/Web/CSS/Reference}
-\end{itemize}
+\end{itemize}    
 
 \small {Les images sont issues de \url{https://developer.mozilla.org/fr/Apprendre/}}
-
+    
 \end{multicols*}
 
 \end{document}
