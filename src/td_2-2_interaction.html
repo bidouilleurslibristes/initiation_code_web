@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+</head>
+<body>
+
+    <h1>Le jeu le plus nul du monde !</h1>
+
+    <p>Ici se trouve le jeu le moins intéressant jamais crée, en ce monde.</p>
+    <p>Les textes s'écrivent dans la console développeur.</p>
+
+    <div>
+        <input type="text" id="nombre_entre">
+        <button onclick="game()" type="button">Jouer !</button>
+    </div>
+
+    <p id='affichage'>Début de partie.</p>
+
+    <script>
+    nombre_a_trouver = Math.floor(Math.random() * 99) + 1;
+
+    function tour(nombre_demande){
+        if (nombre_demande < nombre_a_trouver){
+            console.log("C'est plus");
+        }
+        else if (nombre_demande > nombre_a_trouver) {
+            console.log("C'est moins");
+        }
+        else {
+            console.log("C'est bon");
+        }
+    }
+
+    function game() {
+        nombre_demande = get_input_number();
+        tour(nombre_demande); // tour est la fonction précédente
+    }
+
+    function get_input_number(){
+    // fonction permettant de récupérer le nombre dans le champs de texte
+        return parseInt(document.getElementById('nombre_entre').value);
+    }
+</script>
+
+</body>
+</html>

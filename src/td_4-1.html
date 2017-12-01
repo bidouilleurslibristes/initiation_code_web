@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+
+    <style>
+        body {
+            background-color: white;
+            text-align: center;
+            color: rgb(15, 15, 15);
+        }
+
+        h1 {
+            color: rgb(55, 55, 55);
+        }
+
+</style>
+
+
+</head>
+<body>
+
+    <h1>Le jeu le plus nul du monde !</h1>
+
+    <p>Ici se trouve le jeu le moins intéressant jamais crée, en ce monde.</p>
+    <p>Les textes s'écrivent dans la zone sous le input.</p>
+
+    <div>
+        <input type="text" id="nombre_entre">
+        <button onclick="game()" type="button">Jouer !</button>
+    </div>
+
+    <p id='affichage'>Début de partie.</p>
+
+    <script>
+    nombre_a_trouver = Math.floor(Math.random() * 99) + 1;
+
+    function update_display(text){
+        // fonction permettant de mettre à jour le paragraphe de résultat.
+        // notons que cette fonction ne renvoie rien, elle modifie le document directement
+        document.getElementById('affichage').textContent = text;
+    }
+
+    function update_background_color(color){
+        // fonction permettant de mettre à jour la couleur de fond de la page.
+        // notons que cette fonction ne renvoie rien, elle modifie le style du body directement
+        document.body.style.backgroundColor = color;
+    }
+
+
+    function tour(nombre_demande){
+        if (nombre_demande == "pas un nombre"){
+            update_display("Entrez un nombre, pas n'importe quoi...")
+        }
+        else if (nombre_demande < nombre_a_trouver){
+            update_display("C'est plus");
+            update_background_color("#E87A14");
+        }
+        else if (nombre_demande > nombre_a_trouver) {
+            update_display("C'est moins");
+            update_background_color("#358ECE");
+        }
+        else {
+            update_display("C'est bon /o/");
+            update_background_color("#5CAA53");
+        }
+    }
+
+    function game() {
+        nombre_demande = get_input_number();
+        tour(nombre_demande); // tour est la fonction précédente
+    }
+
+    function get_input_number(){
+        // fonction permettant de récupérer le nombre dans le champs de texte
+        var nombre = parseInt(document.getElementById('nombre_entre').value);
+
+        if (nombre != nombre){
+            // si le texte rentré n'en est pas un, parseInt renvoie un Nan (not a number)
+            // pour détecter un nan, on utilise le fait que nan != nan ...
+            return "pas un nombre";
+        }
+
+        return nombre
+    }
+</script>
+
+</body>
+</html>

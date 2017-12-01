@@ -5,10 +5,6 @@ while(nombre_demande != nombre_a_trouver){
 	chaine_demande = prompt("Nombre");
 	nombre_demande = parseInt(chaine_demande);
 
-	if(nombre_demande != nombre_demande){
-		continue
-	}
-
 	if (nombre_demande < nombre_a_trouver){
 		console.log("C'est plus");
 	}
