@@ -1,0 +1,14 @@
+**/_minted-*/
+**/images/test.tex
+**/images/test.txt
+**/*.aux
+**/*.dvi
+**/*.log
+**/*.nav
+**/*.out
+**/*.snm
+**/*.synctex.gz
+**/*.toc
+**/*.vrb
+
+_minted-science_po/
